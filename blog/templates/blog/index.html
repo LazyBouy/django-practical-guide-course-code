@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header id="main-navigation">
+        <h1><a href="">The First Blog</h1>
+        <nav>
+            <a href="{% url 'starting_page' %}">Home</a></li>
+        </nav>
+    </header>
+
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/1.jpg' %}" alt="Blog Image">
+            <h2>Welcome to My Blog!</h2>
+        </header>
+        
+        <p>Discover articles on various topics, from technology to lifestyle. Stay tuned for regular updates!</p>
+    </section>
+
+    <section id="latest-posts">
+        <header>
+            <h2>Latest Posts</h2>
+        </header>
+        <ul>            
+                <li>
+                   <article class="post">
+                       <a href="">{{ post.title }}
+                            <img src="{% static "blog/images/mountains.jpg" %}" alt="Mountain Hiking">
+                            <div class="post__content">
+                                    <h3>Mountain Hiking</h3>
+                                    <p>xxx</p>
+                            </div>
+                        </a>
+                   </article> 
+                </li>
+            
+        </ul>
+    </section>
+    <section id="about">
+        <h2>View All Posts</h2>
+        <p>xxx</p>
+        <p>xxx</p>
+    </section>
+{% endblock %}
